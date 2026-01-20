@@ -1,6 +1,6 @@
 export const SITE = {
-  name: "Divya",
-  role: "Frontend Developer",
+  name: "John Deon",
+  role: "Full Stack Developer",
   email: "hello@yourdomain.com",
   phone: "+91 00000 00000",
   location: "India",

@@ -19,8 +19,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="max-w-sm text-sm leading-6 text-(--muted)">
-              I build modern, fast, and accessible web experiences with a clean
-              UI and strong attention to detail.
+              I build modern, scalable web and mobile applications using React, Next.js, React Native, Node.js, Express, and MongoDB with clean code and best practices.
             </p>
           </div>
 

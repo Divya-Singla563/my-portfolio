@@ -6,7 +6,18 @@ import { NAV_LINKS, SITE } from "@/lib/constants";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navLinks = useMemo(() => NAV_LINKS, []);
+
+  // Detect scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -25,7 +36,12 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-(--border) bg-(--surface) backdrop-blur supports-backdrop-filter:bg-(--surface)">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+        ? "border-b border-(--border) bg-(--surface)/95 backdrop-blur-md shadow-sm"
+        : "bg-transparent"
+        }`}
+    >
       <div className="container-page">
         <div className="flex h-16 items-center justify-between sm:h-20">
           <div className="flex items-center gap-10">
@@ -79,19 +95,16 @@ const Header = () => {
               <span className="sr-only">Menu</span>
               <span className="grid gap-1.5">
                 <span
-                  className={`h-0.5 w-5 rounded bg-current transition-transform ${
-                    isOpen ? "translate-y-2 rotate-45" : ""
-                  }`}
+                  className={`h-0.5 w-5 rounded bg-current transition-transform ${isOpen ? "translate-y-2 rotate-45" : ""
+                    }`}
                 />
                 <span
-                  className={`h-0.5 w-5 rounded bg-current transition-opacity ${
-                    isOpen ? "opacity-0" : "opacity-100"
-                  }`}
+                  className={`h-0.5 w-5 rounded bg-current transition-opacity ${isOpen ? "opacity-0" : "opacity-100"
+                    }`}
                 />
                 <span
-                  className={`h-0.5 w-5 rounded bg-current transition-transform ${
-                    isOpen ? "-translate-y-2 -rotate-45" : ""
-                  }`}
+                  className={`h-0.5 w-5 rounded bg-current transition-transform ${isOpen ? "-translate-y-2 -rotate-45" : ""
+                    }`}
                 />
               </span>
             </button>
@@ -105,16 +118,14 @@ const Header = () => {
         aria-hidden={!isOpen}
       >
         <div
-          className={`fixed inset-0 z-40 bg-black/40 transition-opacity ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`fixed inset-0 z-40 bg-black/40 transition-opacity ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
           onClick={() => setIsOpen(false)}
         />
 
         <div
-          className={`fixed right-0 top-0 z-50 h-full w-[min(92vw,380px)] border-l border-(--border) bg-background p-6 transition-transform ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`fixed right-0 top-0 z-50 h-full w-[min(92vw,380px)] border-l border-(--border) bg-background p-6 transition-transform ${isOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
