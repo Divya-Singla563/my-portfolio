@@ -3,93 +3,81 @@ import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/lib/constants";
 
 const Footer = () => {
   return (
-    <footer className="mt-20 border-t border-(--border) bg-background">
+    <footer className="mt-20 border-t border-[var(--border)] bg-background">
       <div className="container-page">
-        <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-3">
+        <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Brand Section */}
+          <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <span className="grid size-10 place-items-center rounded-2xl bg-foreground text-sm font-semibold text-background">
+              <span className="grid size-12 place-items-center rounded-2xl bg-[var(--accent)] text-lg font-bold text-white">
                 {SITE.name.slice(0, 1).toUpperCase()}
               </span>
               <div>
-                <div className="text-base font-semibold text-foreground">
+                <div className="text-lg font-bold text-foreground">
                   {SITE.name}
                 </div>
-                <div className="text-sm text-(--muted)">{SITE.role}</div>
+                <div className="text-sm text-[var(--muted)]">{SITE.role}</div>
               </div>
             </div>
-            <p className="max-w-sm text-sm leading-6 text-(--muted)">
-              I build modern, scalable web and mobile applications using React, Next.js, React Native, Node.js, Express, and MongoDB with clean code and best practices.
+            <p className="max-w-sm text-sm leading-relaxed text-[var(--muted)]">
+              Building modern, scalable web and mobile applications using React, Next.js, React Native, and Web3 technologies with clean code and best practices.
             </p>
           </div>
 
+          {/* Contact Section */}
           <div>
-            <div className="text-sm font-semibold tracking-wide text-foreground">
-              Pages
-            </div>
-            <ul className="mt-4 grid gap-2 text-sm">
-              {NAV_LINKS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="rounded-md text-(--muted) transition-colors hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-sm font-semibold tracking-wide text-foreground">
+            <div className="text-base font-bold tracking-wide text-foreground mb-4">
               Contact
             </div>
-            <ul className="mt-4 grid gap-2 text-sm text-(--muted)">
-              <li>
-                <span className="font-medium text-foreground">
-                  Email:
-                </span>{" "}
+            <ul className="grid gap-3 text-sm">
+              <li className="flex flex-col gap-1">
+                <span className="font-semibold text-foreground">
+                  Email
+                </span>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-(--muted) transition-colors hover:text-(--accent)"
+                  className="text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
                 >
                   {SITE.email}
                 </a>
               </li>
-              <li>
-                <span className="font-medium text-foreground">
-                  Phone:
-                </span>{" "}
+              <li className="flex flex-col gap-1">
+                <span className="font-semibold text-foreground">
+                  Phone
+                </span>
                 <a
                   href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-                  className="text-(--muted) transition-colors hover:text-(--accent)"
+                  className="text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
                 >
                   {SITE.phone}
                 </a>
               </li>
-              <li>
-                <span className="font-medium text-foreground">
-                  Location:
-                </span>{" "}
-                {SITE.location}
+              <li className="flex flex-col gap-1">
+                <span className="font-semibold text-foreground">
+                  Location
+                </span>
+                <span className="text-[var(--muted)]">
+                  {SITE.location}
+                </span>
               </li>
             </ul>
           </div>
 
+          {/* Social Section */}
           <div>
-            <div className="text-sm font-semibold tracking-wide text-foreground">
-              Social
+            <div className="text-base font-bold tracking-wide text-foreground mb-4">
+              Social Links
             </div>
-            <ul className="mt-4 grid gap-2 text-sm">
+            <ul className="grid gap-3 text-sm">
               {SOCIAL_LINKS.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="rounded-md text-(--muted) transition-colors hover:text-(--accent) focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    className="flex items-center gap-2 text-[var(--muted)] transition-colors hover:text-[var(--accent)] group"
                   >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {item.label}
                   </a>
                 </li>
@@ -98,22 +86,23 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-(--border) py-6 text-sm text-(--muted) sm:flex-row sm:items-center sm:justify-between">
+        {/* Bottom Bar */}
+        <div className="flex flex-col gap-4 border-t border-[var(--border)] py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <a
               href="#"
-              className="transition-colors hover:text-(--accent)"
+              className="transition-colors hover:text-[var(--accent)]"
             >
-              Privacy
+              Privacy Policy
             </a>
             <a
               href="#"
-              className="transition-colors hover:text-(--accent)"
+              className="transition-colors hover:text-[var(--accent)]"
             >
-              Terms
+              Terms of Service
             </a>
           </div>
         </div>

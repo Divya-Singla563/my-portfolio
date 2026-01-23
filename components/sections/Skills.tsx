@@ -40,6 +40,11 @@ const skills: Skill[] = [
         name: "React Native",
         percentage: "88%",
         icon: "📱"
+    },
+    {
+        name: "Web3",
+        percentage: "80%",
+        icon: "⛓️"
     }
 ];
 
