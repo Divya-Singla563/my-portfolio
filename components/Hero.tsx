@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter, Facebook, Instagram, House } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Experience from "./sections/Experience";
+import Education from "./sections/Education";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
 
 export default function Hero() {
     const [displayedText, setDisplayedText] = useState("");
@@ -27,11 +32,11 @@ export default function Hero() {
         return () => clearTimeout(timeout);
     }, []);
 
-    // const stats = [
-    //     { number: "320", label: "Happy Clients", description: "Lorem ipsum is simply dummy text of the printing and typesetting industry" },
-    //     { number: "299", label: "Employees", description: "Lorem ipsum is simply dummy text of the printing and typesetting industry" },
-    //     { number: "199", label: "Running Work", description: "Lorem ipsum is simply dummy text of the printing and typesetting industry" },
-    // ];
+    const stats = [
+        { number: "320", label: "Happy Clients", description: "Lorem ipsum is simply dummy text of the printing and typesetting industry" },
+        { number: "299", label: "Employees", description: "Lorem ipsum is simply dummy text of the printing and typesetting industry" },
+        { number: "199", label: "Running Work", description: "Lorem ipsum is simply dummy text of the printing and typesetting industry" },
+    ];
 
     return (
         <section className="relative flex pt-16 sm:pt-20">
@@ -124,7 +129,14 @@ export default function Hero() {
 
             {/* Right Content Area - Scrollable */}
             <div className="w-full lg:flex-1">
-                <div className="min-h-screen px-6 sm:px-10 lg:px-16 xl:px-20 py-16 lg:py-24 pt-24 lg:pt-20">
+                <div className="
+  min-h-screen
+  px-6 sm:px-10 lg:px-16 xl:px-20
+  pl-8 sm:pl-6 lg:pl-10 xl:pl-7
+  py-16 lg:py-24
+  pt-24 lg:pt-20
+">
+
                     {/* Introduce Section */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -151,7 +163,7 @@ export default function Hero() {
                     </motion.div>
 
                     {/* Stats Grid */}
-                    {/* <motion.div
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
@@ -173,7 +185,7 @@ export default function Hero() {
                                 </p>
                             </div>
                         ))}
-                    </motion.div> */}
+                    </motion.div>
 
                     {/* About Me Section */}
                     <motion.div
@@ -200,6 +212,16 @@ export default function Hero() {
                             Since beginning my journey as a full stack developer, I've worked with cutting-edge technologies including React Native, React.js, Next.js, MongoDB, Express, and Node.js. I've done remote work for agencies, consulted for startups, and collaborated with talented people to create scalable web and mobile applications for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my development skills one project at a time.
                         </p>
                     </motion.div>
+
+                    <Experience />
+
+                    <Education />
+
+                    <Skills />
+
+                    <Projects />
+
+                    <Contact />
                 </div>
             </div>
         </section>
