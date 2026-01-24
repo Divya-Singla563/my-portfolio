@@ -66,7 +66,7 @@ const Header = () => {
             <nav className="hidden items-center gap-8 md:flex">
               {navLinks.map((item) => (
                 <Link
-                  key={item.href}
+                  key={item.id}
                   href={item.href}
                   className="focus-ring group relative rounded-md py-2 text-sm font-medium tracking-wide text-foreground transition-colors hover:text-(--accent)"
                 >
@@ -146,7 +146,7 @@ const Header = () => {
           <div className="mt-6 grid gap-2">
             {navLinks.map((item) => (
               <Link
-                key={item.href}
+                key={item.id}
                 href={item.href}
                 className="focus-ring rounded-xl px-4 py-3 text-base font-medium text-foreground hover:bg-black/5 dark:hover:bg-white/10"
                 onClick={() => setIsOpen(false)}
