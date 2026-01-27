@@ -10,7 +10,7 @@ export default function Home() {
 
         {/* Right Content Area - Scrollable */}
         <div className="w-full lg:flex-1">
-          <div className="min-h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pl-8 sm:pl-6 lg:pl-10 xl:pl-7 py-16 lg:py-24 pt-24 lg:pt-20">
+          <div className="min-h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pl-8 sm:pl-6 lg:pl-10 xl:pl-7 py-16 lg:py-24 pt-4 lg:pt-20">
 
             <Sections.Introduction />
 

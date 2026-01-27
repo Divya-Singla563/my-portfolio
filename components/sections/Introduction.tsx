@@ -1,17 +1,13 @@
 "use client";
 
+import { SITE, stats } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { House } from "lucide-react";
 
-const stats = [
-    { number: "20+", label: "Projects Delivered", description: "Successfully built and deployed full-stack web and mobile applications" },
-    { number: "2+", label: "Years Experience", description: "Specialized in React.js, Next.js, React Native, and Web3 development" },
-    { number: "Web3", label: "Web3 Integration", description: "Experience integrating blockchain technologies and decentralized solutions" },
-];
 
 export default function Introduction() {
     return (
-        <>
+        <section className="w-full">
             {/* Introduce Section */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -19,16 +15,18 @@ export default function Introduction() {
                 transition={{ duration: 0.5 }}
                 className="mb-16"
             >
-                <div className="flex items-center gap-2 mb-5">
-                    <House />
-                    <h3 className="text-xl font-semibold tracking-wider ">
+                <div className="flex items-center gap-3 mb-6">
+                    <House className="w-6 h-6 " />
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
                         Introduce
                     </h3>
                 </div>
 
+
+
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-5xl  text-[var(--foreground)] mb-6 leading-tight">
-                    Say Hi from <span className="text-[var(--accent)]">John Deon</span>,<br />
-                    Full Stack Developer
+                    Hi from <span className="text-[var(--accent)]">{SITE.name}</span>,<br />
+                    {SITE.role}
                 </h1>
 
                 <p className="text-lg text-[var(--muted)] max-w-3xl leading-relaxed">
@@ -60,6 +58,6 @@ export default function Introduction() {
                     </div>
                 ))}
             </motion.div>
-        </>
+        </section>
     );
 }

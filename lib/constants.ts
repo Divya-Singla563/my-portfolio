@@ -1,8 +1,8 @@
 export const SITE = {
-  name: "John Deon",
+  name: "Divya Singla",
   role: "Full Stack Developer",
-  email: "divya.singla8084@gmail.com",
-  phone: "+91 00000 00000",
+  email: "divya090111@gmail.com",
+  phone: "+91 7814498084",
   location: "Chandigarh, India",
 } as const;
 
@@ -18,3 +18,8 @@ export const SOCIAL_LINKS = [
   { label: "Twitter", href: "https://x.com/" },
 ] as const;
 
+export const stats = [
+  { number: "3+", label: "Years Experience", description: "Specialized in React Native, React.js, Next.js,Node.js, mongodb and Web3 development" },
+  { number: "15+", label: "Projects Delivered", description: "Successfully built and deployed full-stack web and mobile applications" },
+  { number: "Web3", label: "Web3 Integration", description: "Experience integrating blockchain technologies and decentralized solutions" },
+];

@@ -13,26 +13,19 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
     {
-        title: "Personal Portfolio April Fools",
-        company: "University of DVI",
-        period: "1997 - 2001",
-        description: "The education should be very interactual, ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis mauris hendrerit ante.",
-        rating: "4.30/5"
+        title: "React Developer",
+        company: "Capanicus Solutions",
+        period: "Oct, 2025 - Present",
+        description: "Spearheading development and maintenance of cutting-edge web and mobile applications using React.js, Next.js, and React Native. Architected real-time video and voice calling platforms with advanced SIP integration, WebSocket communication, and RESTful API implementation, delivering seamless communication experiences.",
+        // rating: "4.30/5"
     },
     {
-        title: "Examples Of Personal Portfolio",
-        company: "College of Studies",
-        period: "2000 - 2002",
-        description: "Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis mauris hendrerit ante.",
-        rating: "4.30/5"
+        title: "React Native Developer",
+        company: "Apptunix Pvt. Ltd.",
+        period: "Jan 2023 - Sep 2025",
+        description: "Engineered high-performance mobile and web applications across diverse domains including e-commerce, real estate, and education platforms. Implemented features such as universal deep linking, optimized RESTful API integrations, and scalable architectures, consistently delivering robust solutions that enhanced user engagement and business growth.",
+        // rating: "4.30/5"
     },
-    {
-        title: "Tips For Personal Portfolio",
-        company: "University of Studies",
-        period: "2003 - 2005",
-        description: "If you are going to use a passage. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis mauris hendrerit ante.",
-        rating: "4.30/5"
-    }
 ];
 
 export default function Experience() {
@@ -46,15 +39,17 @@ export default function Experience() {
                 transition={{ duration: 0.5 }}
                 className="mb-14"
             >
-                <div className="flex items-center gap-2.5 mb-6">
-                    <User className="w-4 h-4 text-[var(--foreground)]" />
-                    <h3 className="text-xs font-medium tracking-wide text-[var(--foreground)] uppercase">
+
+
+                <div className="flex items-center gap-3 mb-6">
+                    <User className="w-6 h-6 " />
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
                         MyResume
                     </h3>
                 </div>
 
                 <h2 className="text-4xl sm:text-5xl font-bold text-[var(--foreground)] mb-6">
-                    Education & <span className="text-[var(--accent)]">Experience</span>
+                    Work <span className="text-[var(--accent)]">Experience</span>
                 </h2>
             </motion.div>
 

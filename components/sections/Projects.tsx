@@ -9,11 +9,11 @@ interface Project {
     type: "mobile" | "web";
     platform?: string;
     techStack: string[];
-    links: {
-        playStore?: string;
-        appStore?: string;
-        website?: string;
-    };
+    // links: {
+    //     playStore?: string;
+    //     appStore?: string;
+    //     website?: string;
+    // };
 }
 
 const projects: Project[] = [
@@ -23,30 +23,30 @@ const projects: Project[] = [
         type: "mobile",
         platform: "Android & iOS",
         techStack: ["React Native", "Node.js", "MongoDB", "Socket.io"],
-        links: {
-            playStore: "https://play.google.com/store",
-            appStore: "https://apps.apple.com"
-        }
+        // links: {
+        //     playStore: "https://play.google.com/store/search?q=tutorhail&c=apps&hl=en_IN",
+        //     appStore: "https://apps.apple.com"
+        // }
     },
     {
         name: "GetProp",
-        description: "A modern real estate application that helps users find, buy, and sell properties. Features advanced search filters, virtual tours, and agent connections.",
+        description: "A modern real estate application that helps users find, buy, and sell properties. Features advanced search filters and agent connections.",
         type: "mobile",
         platform: "Android & iOS",
         techStack: ["React Native", "Express", "MongoDB", "Google Maps API"],
-        links: {
-            playStore: "https://play.google.com/store",
-            appStore: "https://apps.apple.com"
-        }
+        // links: {
+        //     playStore: "https://play.google.com/store",
+        //     appStore: "https://apps.apple.com"
+        // }
     },
     {
         name: "Krafo",
-        description: "A sleek and responsive website showcasing creative portfolio work with stunning animations and modern design principles.",
+        description: "A modern e-commerce platform for buying and selling properties. Features property listings, advanced search filters, and streamlined transaction management.",
         type: "web",
-        techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        links: {
-            website: "https://krafo.com"
-        }
+        techStack: ["Next.js", "TypeScript", "Tailwind CSS",],
+        // links: {
+        //     website: "https://krafo.com"
+        // }
     }
 ];
 
@@ -61,12 +61,15 @@ export default function Projects() {
                 transition={{ duration: 0.5 }}
                 className="mb-14"
             >
-                <div className="flex items-center gap-2.5 mb-6">
-                    <Briefcase className="w-4 h-4 text-[var(--foreground)]" />
-                    <h3 className="text-xs font-medium tracking-wide text-[var(--foreground)] uppercase">
+
+
+                <div className="flex items-center gap-3 mb-6">
+                    <Briefcase className="w-6 h-6 " />
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
                         Portfolio
                     </h3>
                 </div>
+
 
                 <h2 className="text-4xl sm:text-5xl font-bold text-[var(--foreground)] mb-6">
                     Featured <span className="text-[var(--accent)]">Projects</span>
@@ -113,7 +116,7 @@ export default function Projects() {
                                 </div>
 
                                 {/* Links */}
-                                <div className="flex flex-wrap gap-2 justify-end">
+                                {/* <div className="flex flex-wrap gap-2 justify-end">
                                     {project.links.playStore && (
                                         <a
                                             href={project.links.playStore}
@@ -147,7 +150,7 @@ export default function Projects() {
                                             <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                                         </a>
                                     )}
-                                </div>
+                                </div> */}
                             </div>
 
                             {/* Description */}
