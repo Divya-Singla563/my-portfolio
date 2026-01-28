@@ -14,14 +14,14 @@ interface EducationItem {
 const education: EducationItem[] = [
     {
         degree: "Bachelor's Degree",
-        institution: "University Name",
-        duration: "2018 - 2022",
+        institution: "PGGC, Sector - 11 Chandigarh, India",
+        duration: "2019 - 2022",
         type: "degree",
-        description: "Graduated with honors in Computer Science"
+        description: "Punjab University, Chandigarh"
     },
     {
         degree: "React.js & React Native Training",
-        institution: "Training Institute",
+        institution: "Apptunix Pvt. Ltd.",
         duration: "4 Months",
         type: "training",
         description: "Intensive training program focused on modern React development, React Native mobile app development, and industry best practices"
@@ -39,13 +39,16 @@ export default function Education() {
                 transition={{ duration: 0.5 }}
                 className="mb-14"
             >
-                <div className="flex items-center gap-2.5 mb-6">
-                    <GraduationCap className="w-4 h-4 text-[var(--foreground)]" />
-                    <h3 className="text-xs font-medium tracking-wide text-[var(--foreground)] uppercase">
+
+                <div className="flex items-center gap-3 mb-6">
+                    <GraduationCap className="w-6 h-6 " />
+
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
                         Education
                     </h3>
                 </div>
 
+     
                 <h2 className="text-4xl sm:text-5xl font-bold text-[var(--foreground)] mb-6">
                     My <span className="text-[var(--accent)]">Education</span>
                 </h2>

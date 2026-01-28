@@ -5,18 +5,22 @@ import * as Sections from "@/components/sections";
 export default function Home() {
   return (
     <main>
-      <section className="relative flex pt-16 sm:pt-20">
+      <section id="home" className="relative flex pt-16 sm:pt-20">
         <Sections.ProfileSidebar />
 
         {/* Right Content Area - Scrollable */}
         <div className="w-full lg:flex-1">
-          <div className="min-h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pl-8 sm:pl-6 lg:pl-10 xl:pl-7 py-16 lg:py-24 pt-24 lg:pt-20">
+          <div className="min-h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pl-8 sm:pl-6 lg:pl-10 xl:pl-7 py-16 lg:py-24 pt-4 lg:pt-20">
 
             <Sections.Introduction />
 
-            <Sections.AboutMe />
+            <div id="about">
+              <Sections.AboutMe />
+            </div>
 
-            <Sections.Experience />
+            <div id="experience">
+              <Sections.Experience />
+            </div>
 
             <Sections.Education />
 
@@ -24,7 +28,9 @@ export default function Home() {
 
             <Sections.Projects />
 
-            <Sections.Contact />
+            <div id="contact">
+              <Sections.Contact />
+            </div>
           </div>
         </div>
       </section>

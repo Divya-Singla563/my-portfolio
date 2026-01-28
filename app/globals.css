@@ -51,3 +51,192 @@ body {
 .animate-blink {
   animation: blink 1s infinite;
 }
+
+/* Custom Phone Input - Match Form Input Style */
+.custom-phone-input-wrapper {
+  width: 100%;
+}
+
+/* Hide default library styles and apply custom */
+.custom-phone-input-wrapper .react-tel-input {
+  font-family: inherit;
+}
+
+/* Main input field - exact match to other inputs */
+.custom-phone-input-wrapper .react-tel-input .form-control {
+  width: 100% !important;
+  height: auto !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem 0.75rem 3.5rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease !important;
+  font-family: inherit !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .form-control:hover {
+  border-color: #3a3a3a !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .form-control:focus {
+  outline: none !important;
+  border-color: #FF014F !important;
+  background-color: #1f1f1f !important;
+  box-shadow: none !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .form-control::placeholder {
+  color: rgba(160, 160, 160, 0.4) !important;
+}
+
+/* Flag dropdown button */
+.custom-phone-input-wrapper .react-tel-input .flag-dropdown {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-right: 1px solid #2a2a2a !important;
+  border-radius: 0.5rem 0 0 0.5rem !important;
+  padding: 0 !important;
+  width: 3rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .flag-dropdown:hover,
+.custom-phone-input-wrapper .react-tel-input .flag-dropdown.open {
+  background-color: transparent !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .selected-flag {
+  width: 100% !important;
+  padding: 0 0 0 0.75rem !important;
+  background-color: transparent !important;
+  border-radius: 0.5rem 0 0 0.5rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .selected-flag:hover,
+.custom-phone-input-wrapper .react-tel-input .selected-flag:focus {
+  background-color: transparent !important;
+}
+
+/* Dropdown arrow */
+.custom-phone-input-wrapper .react-tel-input .arrow {
+  border-left: 3px solid transparent !important;
+  border-right: 3px solid transparent !important;
+  border-top: 4px solid rgba(160, 160, 160, 0.6) !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin-left: 0.25rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .arrow.up {
+  border-top: none !important;
+  border-bottom: 4px solid rgba(160, 160, 160, 0.6) !important;
+}
+
+/* Country dropdown list */
+.custom-phone-input-wrapper .react-tel-input .country-list {
+  position: absolute !important;
+  z-index: 50 !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 0.5rem !important;
+  margin-top: 0.25rem !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  width: 300px !important;
+}
+
+/* Search container */
+.custom-phone-input-wrapper .react-tel-input .country-list .search {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 2 !important;
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #2a2a2a !important;
+  padding: 0.5rem !important;
+}
+
+/* Hide search emoji */
+.custom-phone-input-wrapper .react-tel-input .country-list .search-emoji {
+  display: none !important;
+}
+
+/* Search input box */
+.custom-phone-input-wrapper .react-tel-input .country-list .search-box {
+  width: 100% !important;
+  background-color: #1f1f1f !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem !important;
+  font-size: 0.875rem !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .search-box::placeholder {
+  color: rgba(160, 160, 160, 0.4) !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .search-box:focus {
+  outline: none !important;
+  border-color: #FF014F !important;
+  background-color: #1a1a1a !important;
+}
+
+/* Country items */
+.custom-phone-input-wrapper .react-tel-input .country-list .country {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.5rem 0.75rem !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .country .flag {
+  margin-right: 0.5rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .country .country-name {
+  flex: 1 !important;
+  color: #ffffff !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .country .dial-code {
+  color: rgba(160, 160, 160, 0.8) !important;
+  margin-left: 0.5rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .country:hover {
+  background-color: #2a2a2a !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list .country.highlight {
+  background-color: rgba(255, 1, 79, 0.1) !important;
+}
+
+/* Scrollbar */
+.custom-phone-input-wrapper .react-tel-input .country-list::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list::-webkit-scrollbar-track {
+  background: #1a1a1a !important;
+  border-radius: 0.5rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list::-webkit-scrollbar-thumb {
+  background: #3a3a3a !important;
+  border-radius: 0.5rem !important;
+}
+
+.custom-phone-input-wrapper .react-tel-input .country-list::-webkit-scrollbar-thumb:hover {
+  background: #FF014F !important;
+}
