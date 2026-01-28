@@ -5,10 +5,12 @@ import { Mail } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { SITE } from "@/lib/constants";
+import CustomPhoneInput from "@/components/ui/PhoneInput";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: "",
+        countryCode: "",
         phone: "",
         email: "",
         subject: "",
@@ -28,6 +30,19 @@ export default function Contact() {
         });
     };
 
+    const handlePhoneChange = (value: string, country: any) => {
+        // Extract country code and phone number
+        const countryCode = country.dialCode;
+        // Remove country code from the full value to get just the phone number
+        const phoneNumber = value.replace(countryCode, '');
+
+        setFormData({
+            ...formData,
+            countryCode: `+${countryCode}`,
+            phone: phoneNumber
+        });
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -44,6 +59,7 @@ export default function Contact() {
                     access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
                     name: formData.name,
                     email: formData.email,
+                    country_code: formData.countryCode,
                     phone: formData.phone,
                     subject: formData.subject,
                     message: formData.message,
@@ -60,6 +76,7 @@ export default function Contact() {
                 // Reset form
                 setFormData({
                     name: "",
+                    countryCode: "",
                     phone: "",
                     email: "",
                     subject: "",
@@ -145,13 +162,10 @@ export default function Contact() {
                                 />
                             </div>
                             <div className="group">
-                                <input
-                                    type="tel"
-                                    name="phone"
+                                <CustomPhoneInput
+                                    value={formData.countryCode + formData.phone}
+                                    onChange={handlePhoneChange}
                                     placeholder="Phone Number"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg px-4 py-3 text-[var(--foreground)] text-sm placeholder:text-[var(--muted)]/40 focus:outline-none focus:border-[var(--accent)] focus:bg-[#1f1f1f] transition-all duration-300 hover:border-[#3a3a3a]"
                                 />
                             </div>
                         </div>

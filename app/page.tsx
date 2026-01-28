@@ -5,7 +5,7 @@ import * as Sections from "@/components/sections";
 export default function Home() {
   return (
     <main>
-      <section className="relative flex pt-16 sm:pt-20">
+      <section id="home" className="relative flex pt-16 sm:pt-20">
         <Sections.ProfileSidebar />
 
         {/* Right Content Area - Scrollable */}
@@ -14,9 +14,13 @@ export default function Home() {
 
             <Sections.Introduction />
 
-            <Sections.AboutMe />
+            <div id="about">
+              <Sections.AboutMe />
+            </div>
 
-            <Sections.Experience />
+            <div id="experience">
+              <Sections.Experience />
+            </div>
 
             <Sections.Education />
 
@@ -24,7 +28,9 @@ export default function Home() {
 
             <Sections.Projects />
 
-            <Sections.Contact />
+            <div id="contact">
+              <Sections.Contact />
+            </div>
           </div>
         </div>
       </section>

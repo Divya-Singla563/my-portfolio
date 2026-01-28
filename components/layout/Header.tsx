@@ -35,10 +35,38 @@ const Header = () => {
     };
   }, [isOpen]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    // Close mobile menu if open
+    setIsOpen(false);
+
+    // Handle home navigation - scroll to top
+    if (href === "#home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Handle section navigation
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const headerOffset = 80; // Offset for sticky header
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-        ? "border-b border-(--border) bg-(--surface)/95 backdrop-blur-md shadow-sm"
+        ? "bg-(--surface)/95 backdrop-blur-md shadow-sm"
         : "bg-transparent"
         }`}
     >
@@ -46,7 +74,8 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between sm:h-20">
           <div className="flex items-center gap-10">
             <Link
-              href="/"
+              href="#home"
+              onClick={(e) => handleNavClick(e, "#home")}
               className="focus-ring inline-flex items-center gap-2 rounded-md py-1"
               aria-label={`${SITE.name} home`}
             >
@@ -68,6 +97,7 @@ const Header = () => {
                 <Link
                   key={item.id}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="focus-ring group relative rounded-md py-2 text-sm font-medium tracking-wide text-foreground transition-colors hover:text-(--accent)"
                 >
                   {item.label}
@@ -80,6 +110,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <Link
               href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="focus-ring hidden rounded-full bg-(--accent) px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-(--accent-2) md:inline-flex"
             >
               Let’s Talk
@@ -149,7 +180,7 @@ const Header = () => {
                 key={item.id}
                 href={item.href}
                 className="focus-ring rounded-xl px-4 py-3 text-base font-medium text-foreground hover:bg-black/5 dark:hover:bg-white/10"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.label}
               </Link>
@@ -160,7 +191,7 @@ const Header = () => {
             <Link
               href="#contact"
               className="focus-ring inline-flex w-full items-center justify-center rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-(--accent-2)"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, "#contact")}
             >
               Let’s Talk
             </Link>
