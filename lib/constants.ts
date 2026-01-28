@@ -1,8 +1,9 @@
+import { Github, Instagram, Linkedin } from "lucide-react";
+
 export const SITE = {
   name: "Divya Singla",
   role: "Full Stack Developer",
-  email: "divya090111@gmail.com",
-  phone: "+91 7814498084",
+  email: "divya.singla8084@gmail.com",
   location: "Chandigarh, India",
 } as const;
 
@@ -13,9 +14,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "Twitter", href: "https://x.com/" },
+  { label: "LinkedIn", Icon: Linkedin, href: "https://www.linkedin.com/in/divya-singla-4188ba1b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  { label: "Instagram", Icon: Instagram, href: "https://www.instagram.com/divya_in_frames?igsh=c2t2bDc5YXVpaXhr" },
+  { label: "Github", Icon: Github, href: "https://github.com/Divya-Singla563" },
 ] as const;
 
 export const stats = [

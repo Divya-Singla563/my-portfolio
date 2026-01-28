@@ -41,7 +41,7 @@ const Footer = () => {
                   {SITE.email}
                 </a>
               </li>
-              <li className="flex flex-col gap-1">
+              {/* <li className="flex flex-col gap-1">
                 <span className="font-semibold text-foreground">
                   Phone
                 </span>
@@ -51,7 +51,7 @@ const Footer = () => {
                 >
                   {SITE.phone}
                 </a>
-              </li>
+              </li> */}
               <li className="flex flex-col gap-1">
                 <span className="font-semibold text-foreground">
                   Location
@@ -91,7 +91,7 @@ const Footer = () => {
           <p>
             © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          {/* <div className="flex items-center gap-6">
             <a
               href="#"
               className="transition-colors hover:text-[var(--accent)]"
@@ -104,7 +104,7 @@ const Footer = () => {
             >
               Terms of Service
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
