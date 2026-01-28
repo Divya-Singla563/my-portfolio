@@ -13,7 +13,7 @@ export default function Introduction() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="mb-16"
+                className="mb-8 md:mb-16"
             >
                 <div className="flex items-center gap-3 mb-6">
                     <House className="w-6 h-6 " />
@@ -39,7 +39,7 @@ export default function Introduction() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 md:mb-16"
             >
                 {stats.map((stat, index) => (
                     <div

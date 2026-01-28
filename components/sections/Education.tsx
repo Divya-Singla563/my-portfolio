@@ -30,7 +30,7 @@ const education: EducationItem[] = [
 
 export default function Education() {
     return (
-        <section className="w-full py-12">
+        <section className="w-full py-6 md:py-12">
             {/* Section Header */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function Education() {
                     </h3>
                 </div>
 
-     
+
                 <h2 className="text-4xl sm:text-5xl font-bold text-[var(--foreground)] mb-6">
                     My <span className="text-[var(--accent)]">Education</span>
                 </h2>
