@@ -52,7 +52,7 @@ const projects: Project[] = [
 
 export default function Projects() {
     return (
-        <section className="w-full py-12">
+        <section className="w-full py-6 md:py-12">
             {/* Section Header */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

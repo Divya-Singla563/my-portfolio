@@ -6,7 +6,7 @@ import { UserCircle } from "lucide-react";
 
 export default function AboutMe() {
     return (
-        <section className="w-full py-12">
+        <section className="w-full py-6 md:py-12">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

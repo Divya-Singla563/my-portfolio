@@ -28,9 +28,9 @@ export default function ProfileSidebar() {
     }, []);
 
     return (
-        <div className="hidden lg:block lg:w-[420px] xl:w-[480px]">
-            <div className="sticky top-32 h-[calc(100vh-8rem)] flex items-center justify-center">
-                <div className="relative w-full max-w-sm">
+        <div className="w-full lg:w-[420px] xl:w-[480px] mb-12 lg:mb-0 px-6 lg:px-0">
+            <div className="lg:sticky lg:top-32 lg:h-[calc(100vh-8rem)] flex items-center justify-center">
+                <div className="relative w-full max-w-md mx-auto lg:max-w-sm">
                     {/* Profile Card with Image */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -54,7 +54,7 @@ export default function ProfileSidebar() {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.5 }}
-                            className="absolute top-6 left-0 right-0 flex justify-center gap-4 z-20"
+                            className="absolute top-4 sm:top-6 left-0 right-0 flex justify-center gap-2 sm:gap-4 z-20"
                         >
                             {/* <a
                                 target="_blank"
@@ -71,9 +71,9 @@ export default function ProfileSidebar() {
                                         key={item.label}
                                         target="_blank"
                                         href={item.href}
-                                        className="w-12 h-12 rounded bg-[#1a1a1a]/80 backdrop-blur-sm border border-[var(--border)] flex items-center justify-center text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 rounded bg-[#1a1a1a]/80 backdrop-blur-sm border border-[var(--border)] flex items-center justify-center text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all"
                                     >
-                                        <item.Icon className="w-5 h-5" />
+                                        <item.Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </a>
                                 ))
                             }
@@ -83,21 +83,21 @@ export default function ProfileSidebar() {
                         </motion.div>
 
                         {/* Text Overlay - Bottom Left */}
-                        <div className="absolute z-20 bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <div className="absolute z-20 bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5, duration: 0.5 }}
                             >
-                                <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-1">
+                                <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-1">
                                     Hello I'm
                                 </h2>
-                                <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-2">
+                                <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-2">
                                     {SITE.name}
                                 </h1>
-                                <p className="text-2xl sm:text-3xl font-medium text-white">
+                                <p className="text-lg sm:text-2xl md:text-3xl font-medium text-white">
                                     a <span className="text-[var(--accent)] font-bold">{displayedText}</span>
-                                    <span className="inline-block w-0.5 h-8 bg-[var(--accent)] ml-1 animate-blink align-middle"></span>
+                                    <span className="inline-block w-0.5 h-5 sm:h-6 md:h-8 bg-[var(--accent)] ml-1 animate-blink align-middle"></span>
                                 </p>
                             </motion.div>
                         </div>
@@ -108,7 +108,7 @@ export default function ProfileSidebar() {
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.8, duration: 0.5 }}
-                        className="absolute -bottom-6 -left-6 w-20 h-20 bg-[var(--accent)] rounded-lg z-10"
+                        className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-20 sm:h-20 bg-[var(--accent)] rounded-lg z-10"
                     />
                 </div>
             </div>
