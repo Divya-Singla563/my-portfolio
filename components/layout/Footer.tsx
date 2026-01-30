@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { NAV_LINKS, SITE, SOCIAL_LINKS } from "@/lib/constants";
+import { SITE, SOCIAL_LINKS } from "@/lib/constants";
 
 const Footer = () => {
   return (
@@ -7,6 +6,7 @@ const Footer = () => {
       <div className="container-page">
         <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-3">
           {/* Brand Section */}
+
           <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center gap-3">
               <span className="grid size-12 place-items-center rounded-2xl bg-[var(--accent)] text-lg font-bold text-white">
@@ -20,7 +20,9 @@ const Footer = () => {
               </div>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-[var(--muted)]">
-              Building modern, scalable web and mobile applications using React, Next.js, React Native, and Web3 technologies with clean code and best practices.
+              Building modern, scalable web and mobile applications using React,
+              Next.js, React Native, and Web3 technologies with clean code and
+              best practices.
             </p>
           </div>
 
@@ -31,9 +33,7 @@ const Footer = () => {
             </div>
             <ul className="grid gap-3 text-sm">
               <li className="flex flex-col gap-1">
-                <span className="font-semibold text-foreground">
-                  Email
-                </span>
+                <span className="font-semibold text-foreground">Email</span>
                 <a
                   href={`mailto:${SITE.email}`}
                   className="text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
@@ -53,12 +53,8 @@ const Footer = () => {
                 </a>
               </li> */}
               <li className="flex flex-col gap-1">
-                <span className="font-semibold text-foreground">
-                  Location
-                </span>
-                <span className="text-[var(--muted)]">
-                  {SITE.location}
-                </span>
+                <span className="font-semibold text-foreground">Location</span>
+                <span className="text-[var(--muted)]">{SITE.location}</span>
               </li>
             </ul>
           </div>
