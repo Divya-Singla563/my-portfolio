@@ -10,6 +10,7 @@ const Header = () => {
   const navLinks = useMemo(() => NAV_LINKS, []);
 
   // Detect scroll position
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);

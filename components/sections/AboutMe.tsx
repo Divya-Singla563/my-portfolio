@@ -13,6 +13,7 @@ export default function AboutMe() {
       >
         <div className="flex items-center gap-3 mb-6">
           <UserCircle className="w-6 h-6 " />
+
           <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
             About
           </h3>

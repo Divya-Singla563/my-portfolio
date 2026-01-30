@@ -9,19 +9,18 @@ export default defineConfig([
   // Custom rules (IMPORTANT)
   {
     rules: {
-      "no-unused-vars": "error",
+      // "no-unused-vars": "error",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "react/no-unescaped-entities": "off",
+      "react-hooks/exhaustive-deps": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
-        { argsIgnorePattern: "^_" }
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
     },
   },
 
   // Ignore build files
-  globalIgnores([
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
 ]);

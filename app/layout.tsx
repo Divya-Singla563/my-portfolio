@@ -13,12 +13,9 @@ export const metadata: Metadata = {
   title: "Divya Singla",
   description: "A Full Stack Developer(React Native, React js, Node js)",
   icons: {
-    icon: [
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
-    ],
+    icon: [{ url: "/icon.png", sizes: "512x512", type: "image/png" }],
+
+    apple: [{ url: "/icon.png", sizes: "512x512", type: "image/png" }],
   },
 };
 

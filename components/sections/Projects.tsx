@@ -1,122 +1,123 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Smartphone, Globe, ArrowUpRight } from "lucide-react";
+import { Briefcase, Smartphone, Globe } from "lucide-react";
 
 interface Project {
-    name: string;
-    description: string;
-    type: "mobile" | "web";
-    platform?: string;
-    techStack: string[];
-    // links: {
-    //     playStore?: string;
-    //     appStore?: string;
-    //     website?: string;
-    // };
+  name: string;
+  description: string;
+  type: "mobile" | "web";
+  platform?: string;
+  techStack: string[];
+  links?: {
+    playStore?: string;
+    appStore?: string;
+    website?: string;
+  };
 }
 
 const projects: Project[] = [
-    {
-        name: "TutorHail",
-        description: "A comprehensive tutoring platform connecting students with qualified tutors. Features real-time chat, scheduling, payment integration, and progress tracking.",
-        type: "mobile",
-        platform: "Android & iOS",
-        techStack: ["React Native", "Node.js", "MongoDB", "Socket.io"],
-        // links: {
-        //     playStore: "https://play.google.com/store/search?q=tutorhail&c=apps&hl=en_IN",
-        //     appStore: "https://apps.apple.com"
-        // }
+  {
+    name: "TutorHail",
+    description:
+      "A comprehensive tutoring platform connecting students with qualified tutors. Features real-time chat, scheduling, payment integration, and progress tracking.",
+    type: "mobile",
+    platform: "Android & iOS",
+    techStack: ["React Native", "Node.js", "MongoDB", "Socket.io"],
+    links: {
+      playStore:
+        "https://play.google.com/store/search?q=tutorhail&c=apps&hl=en_IN",
+      //   appStore: "https://apps.apple.com",
     },
-    {
-        name: "GetProp",
-        description: "A modern real estate application that helps users find, buy, and sell properties. Features advanced search filters and agent connections.",
-        type: "mobile",
-        platform: "Android & iOS",
-        techStack: ["React Native", "Express", "MongoDB", "Google Maps API"],
-        // links: {
-        //     playStore: "https://play.google.com/store",
-        //     appStore: "https://apps.apple.com"
-        // }
-    },
-    {
-        name: "Krafo",
-        description: "A modern e-commerce platform for buying and selling properties. Features property listings, advanced search filters, and streamlined transaction management.",
-        type: "web",
-        techStack: ["Next.js", "TypeScript", "Tailwind CSS",],
-        // links: {
-        //     website: "https://krafo.com"
-        // }
-    }
+  },
+  {
+    name: "GetProp",
+    description:
+      "A modern real estate application that helps users find, buy, and sell properties. Features advanced search filters and agent connections.",
+    type: "mobile",
+    platform: "Android & iOS",
+    techStack: ["React Native", "Express", "MongoDB", "Google Maps API"],
+    // links: {
+    //     playStore: "https://play.google.com/store",
+    //     appStore: "https://apps.apple.com"
+    // }
+  },
+  {
+    name: "Krafo",
+    description:
+      "A modern e-commerce platform for buying and selling properties. Features property listings, advanced search filters, and streamlined transaction management.",
+    type: "web",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    // links: {
+    //     website: "https://krafo.com"
+    // }
+  },
 ];
 
 export default function Projects() {
-    return (
-        <section className="w-full py-6 md:py-12">
-            {/* Section Header */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="mb-14"
-            >
+  return (
+    <section className="w-full py-6 md:py-12">
+      {/* Section Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-14"
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <Briefcase className="w-6 h-6 " />
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
+            Portfolio
+          </h3>
+        </div>
 
+        <h2 className="text-4xl sm:text-5xl font-bold text-[var(--foreground)] mb-6">
+          Featured <span className="text-[var(--accent)]">Projects</span>
+        </h2>
+      </motion.div>
 
-                <div className="flex items-center gap-3 mb-6">
-                    <Briefcase className="w-6 h-6 " />
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--muted)]">
-                        Portfolio
-                    </h3>
+      {/* Projects List */}
+      <div className="space-y-6">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className="group"
+          >
+            <div className="bg-[#1f1f1f] border border-[#2a2a2a] rounded-lg p-6 hover:border-[var(--accent)]/50 transition-all duration-300">
+              {/* Header Row */}
+              <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    {/* Icon */}
+                    <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center group-hover:border-[var(--accent)]/30 transition-colors">
+                      {project.type === "mobile" ? (
+                        <Smartphone className="w-5 h-5 text-[var(--accent)]" />
+                      ) : (
+                        <Globe className="w-5 h-5 text-[var(--accent)]" />
+                      )}
+                    </div>
+
+                    {/* Title */}
+                    <div>
+                      <h3 className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
+                        {project.name}
+                      </h3>
+                      {project.platform && (
+                        <p className="text-xs text-[var(--muted)]/60 mt-0.5">
+                          {project.platform}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </div>
 
-
-                <h2 className="text-4xl sm:text-5xl font-bold text-[var(--foreground)] mb-6">
-                    Featured <span className="text-[var(--accent)]">Projects</span>
-                </h2>
-            </motion.div>
-
-            {/* Projects List */}
-            <div className="space-y-6">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                        className="group"
-                    >
-                        <div className="bg-[#1f1f1f] border border-[#2a2a2a] rounded-lg p-6 hover:border-[var(--accent)]/50 transition-all duration-300">
-                            {/* Header Row */}
-                            <div className="flex items-start justify-between gap-4 mb-4">
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        {/* Icon */}
-                                        <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center group-hover:border-[var(--accent)]/30 transition-colors">
-                                            {project.type === "mobile" ? (
-                                                <Smartphone className="w-5 h-5 text-[var(--accent)]" />
-                                            ) : (
-                                                <Globe className="w-5 h-5 text-[var(--accent)]" />
-                                            )}
-                                        </div>
-
-                                        {/* Title */}
-                                        <div>
-                                            <h3 className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
-                                                {project.name}
-                                            </h3>
-                                            {project.platform && (
-                                                <p className="text-xs text-[var(--muted)]/60 mt-0.5">
-                                                    {project.platform}
-                                                </p>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Links */}
-                                {/* <div className="flex flex-wrap gap-2 justify-end">
+                {/* Links */}
+                {/* <div className="flex flex-wrap gap-2 justify-end">
                                     {project.links.playStore && (
                                         <a
                                             href={project.links.playStore}
@@ -151,28 +152,28 @@ export default function Projects() {
                                         </a>
                                     )}
                                 </div> */}
-                            </div>
+              </div>
 
-                            {/* Description */}
-                            <p className="text-sm text-[var(--muted)]/80 leading-relaxed mb-4">
-                                {project.description}
-                            </p>
+              {/* Description */}
+              <p className="text-sm text-[var(--muted)]/80 leading-relaxed mb-4">
+                {project.description}
+              </p>
 
-                            {/* Tech Stack */}
-                            <div className="flex flex-wrap gap-2">
-                                {project.techStack.map((tech, techIndex) => (
-                                    <span
-                                        key={techIndex}
-                                        className="text-xs px-3 py-1.5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-full text-[var(--foreground)]/70"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.div>
+              {/* Tech Stack */}
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="text-xs px-3 py-1.5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-full text-[var(--foreground)]/70"
+                  >
+                    {tech}
+                  </span>
                 ))}
+              </div>
             </div>
-        </section>
-    );
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }
